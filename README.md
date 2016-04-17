@@ -41,7 +41,7 @@ Out of the box, crystal-pg supports 1-32 types. If you need more, you can reopen
 
 ### untyped querying
 
-If you do not know the types beforehand you can omit them. However you will get back an array of arrays of PGValue. Since it is a union type of amost every type, you will probably have to manually cast later on in your program.
+If you do not know the types beforehand you can omit them. However you will get back an array of arrays of PGValue. Since it is a union type of almost every type, you will probably have to manually cast later on in your program.
 
 ``` crystal
 result = DB.exec("select * from table")
@@ -71,7 +71,7 @@ Linking requires that the `pg_config` binary is in your `$PATH` and returns corr
 - bytea
 - numeric/decimal*
 
-* A note on numeric: In postgres this type has arbitrary percision. In this driver, it is represented as a `PG::Numeric` which retians all precision, but if you need to do any math on it, you will probably need to cast it to a float first.
+* A note on numeric: In postgres this type has arbitrary percision. In this driver, it is represented as a `PG::Numeric` which retians all precision, but if you need to do any math on it, you will probably need to cast it to a float first. If you need true abitrary percision, you can optionally require `pg_ext/big_rational` which adds `#to_big_r`, but requires that you have LibGMP installed.
 
 
 ## Todo
