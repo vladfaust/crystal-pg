@@ -56,9 +56,8 @@ PG_DB.query_one("select '{hello, world}'::text[]", &.read(Array(String))
 ## Requirements
 
 Crystal-pg is [tested on](https://travis-ci.org/will/crystal-pg) Postgres
-versions 9.1 through 9.4 and developed on 9.6 (travis does not currently have
-9.5 support). Since it uses protocal version 3, older versions probably also
-work but are not guaranteed.
+versions 9.2 through 9.6 and developed on 9.6. Since it uses protocal version
+3, older (7.3+) versions probably also work but are not guaranteed.
 
 ## Supported Datatypes
 
